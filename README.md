@@ -1,14 +1,8 @@
-iiadlenslsnalwdmerlknrd
+###test Automated Build 
+
+================
 
 
+> just add php directory and `php.ini` file
+> test that whether it can automated build iamge
 
-awdawd
-awdawda
-adawg
-d
-
-bcb
-c
-d
-g
-dr
