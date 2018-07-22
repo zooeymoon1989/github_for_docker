@@ -1,6 +1,6 @@
 FROM php:7.1-fpm    
 
-COPY php.ini /usr/local/etc/php/php.ini
+COPY php/php.ini /usr/local/etc/php/php.ini
  
 RUN curl 'http://pecl.php.net/get/mongodb-1.5.1.tgz' -o mongodb-1.5.1.tgz
 
