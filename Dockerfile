@@ -1,30 +1,30 @@
-FROM php:7.1-fpm    
+FROM php:8.0.1-fpm-alpine3.12   
 
 COPY php/php.ini /usr/local/etc/php/php.ini
  
-RUN curl 'http://pecl.php.net/get/mongodb-1.5.1.tgz' -o mongodb-1.5.1.tgz
+RUN curl 'http://pecl.php.net/get/mongodb-1.5.1.tgz' -o mongodb-1.5.1.tgz \
 
-RUN pecl install mongodb-1.5.1.tgz
+    && pecl install mongodb-1.5.1.tgz \
 
-RUN docker-php-ext-enable mongodb
+    && docker-php-ext-enable mongodb \
 
-RUN rm mongodb-1.5.1.tgz
+    && rm mongodb-1.5.1.tgz \
 
-RUN rm -rf mongodb-1.5.1
+    && rm -rf mongodb-1.5.1 \
 
-RUN echo "成功添加mongodb!"
+   && echo "成功添加mongodb!" \
 
-RUN curl 'http://pecl.php.net/get/redis-4.1.0.tgz' -o redis-4.1.0.tgz
+   && curl 'http://pecl.php.net/get/redis-4.1.0.tgz' -o redis-4.1.0.tgz \
 
-RUN pecl install redis-4.1.0.tgz
+   && pecl install redis-4.1.0.tgz \
 
-RUN docker-php-ext-enable redis
+   && docker-php-ext-enable redis \
 
-RUN rm redis-4.1.0.tgz
+   && rm redis-4.1.0.tgz \
 
-RUN rm -rf redis-4.1.0
+   && rm -rf redis-4.1.0 \
 
-RUN echo "成功添加redis扩展!"
+   && echo "成功添加redis扩展!"
 
 EXPOSE 9000
 CMD ["php-fpm"]
